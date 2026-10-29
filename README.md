@@ -1,5 +1,15 @@
 # Figure notebooks and input tables
 
+## Extracting the archive `tar.gz`
+
+Extract `pmd.tar.gz` into a dedicated directory
+
+```sh
+tar -xzf pmd.tar.gz
+```
+
+The archive contains `figure1.Rmd`–`figure6.Rmd`, `accuracy_precision.Rmd`, and `data/`. Open the notebooks from this directory to resolve correctly the path.
+
 The figure notebooks are `figure1.Rmd`-`figure6.Rmd`. They calculate indices and draw the corresponding manuscript figures from existing data. `accuracy_precision.Rmd` separately calculates the experimental mixture accuracy and precision table. Run the notebooks with this directory as the working directory. Input paths refer to `./data/`.
 
 ## Synthetic datasets
@@ -38,7 +48,7 @@ Sample identifiers combine patient, cell type, and time point with `__`.
 
 ## `accuracy_precision.Rmd`
 
-`accuracy_precision.Rmd` expects `data/Mix1-3_is_counts.csv`. This table is a reformatted subset of the published experimental dataset cited in the manuscript, not synthetic data generated for this study. This experimental input is not included. Obtain the source dataset using the link in the manuscript. To prepare the input, retain only mixtures 1–3. The table uses the same long format with `sample`, `chromosome`, `position`, and `frequency`. Sample `1_2` identifies mixture 1, replicate 2.  
+`accuracy_precision.Rmd` expects `data/Mix1-3_is_counts.csv`. This table is a reformatted subset of the published experimental dataset cited in the manuscript and is not generated for this study. This experimental input is not included. Obtain the source dataset using the link in the manuscript. To prepare the input, retain only mixtures 1–3. The table uses the same long format with `sample`, `chromosome`, `position`, and `frequency`. Sample `1_2` identifies mixture 1, replicate 2.  
 
 The notebook estimates the dominant-clone frequency before and after plateau correction, then calculates accuracy and precision across the three replicates.
 
